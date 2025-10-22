@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sports Matic – Explore Your Passion for Sports!</title>
+  <style>
+    /* ----- General Reset ----- */
+    *{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;}
+    body{
+      min-height:100vh;
+      background:url("i.png") center/cover fixed no-repeat;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      padding:30px;
+    }
+    h1{
+      font-size:3rem;
+      color:#fff;
+      text-shadow:0 0 8px #000;
+      margin-bottom:40px;
+      animation:fadeIn 1.2s ease forwards;
+    }
+    .container{
+      display:flex;
+      gap:30px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .card{
+      width:200px;
+      height:260px;
+      background:#fff;
+      border-radius:20px;
+      box-shadow:0 8px 20px rgba(0,0,0,.3);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      color:#222;
+      transition:transform .3s ease,box-shadow .3s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .card:hover{
+      transform:translateY(-10px) scale(1.05);
+      box-shadow:0 0 25px #ffd43b;
+    }
+    .card .emoji{
+      font-size:4rem;
+      margin-bottom:15px;
+      animation:float 3s ease-in-out infinite;
+    }
+    .card .title{
+      font-size:1.4rem;
+      font-weight:bold;
+    }
+    /* ----- Animations ----- */
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(-30px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+    @keyframes float{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-10px);}
+    }
+    /* ----- Emoji Decor ----- */
+    .emoji-decor{
+      position:absolute;
+      font-size:2.2rem;
+      opacity:.25;
+      animation:drift 20s linear infinite;
+      pointer-events:none;
+    }
+    @keyframes drift{
+      from{transform:translateY(110vh) rotate(0deg);}
+      to{transform:translateY(-110vh) rotate(360deg);}
+    }
+    /* ----- About Us ----- */
+    .about{
+      max-width:700px;
+      background:rgba(255,255,255,.9);
+      border-radius:15px;
+      padding:25px 35px;
+      margin-top:40px;
+      text-align:center;
+      box-shadow:0 8px 22px rgba(0,0,0,.2);
+    }
+    .about h2{margin-bottom:15px;color:#0059b3;}
+    .about p{margin:8px 0;font-size:1.1rem;color:#333;}
+  </style>
+</head>
+<body>
+
+  <h1>🏅 Sports Matic – Explore Your Passion for Sports!</h1>
+
+  <div class="container">
+    <a href="football.html" class="card">
+      <span class="emoji">⚽</span>
+      <span class="title">Football</span>
+    </a>
+
+    <a href="basketball.html" class="card">
+      <span class="emoji">🏀</span>
+      <span class="title">Basketball</span>
+    </a>
+
+    <a href="cricket.html" class="card">
+      <span class="emoji">🏏</span>
+      <span class="title">Cricket</span>
+    </a>
+  </div>
+
+  <!-- ---------- About Us ---------- -->
+  <div class="about">
+    <h2>About Us</h2>
+    <p><strong>Creator:</strong> Abhimanyu Poudel</p>
+    <p><strong>Supporter:</strong> Genious Lamsal</p>
+    <p>Sports Matic is a lightweight, animated sports-info hub built with pure HTML, CSS & JavaScript.  
+    No external libraries—just clean code and emoji-powered fun. Explore football, basketball and cricket pages, each packed with competitions, legends and smooth scroll effects.</p>
+  </div>
+
+  <!-- ---------- Floating Decor ---------- -->
+  <span class="emoji-decor" style="left:5%;animation-delay:0s;">⚽</span>
+  <span class="emoji-decor" style="left:20%;animation-delay:3s;">🏀</span>
+  <span class="emoji-decor" style="left:35%;animation-delay:6s;">🏏</span>
+  <span class="emoji-decor" style="left:50%;animation-delay:9s;">⚽</span>
+  <span class="emoji-decor" style="left:65%;animation-delay:12s;">🏀</span>
+  <span class="emoji-decor" style="left:80%;animation-delay:15s;">🏏</span>
+
+  <script>
+    // Add glow on hover via JS
+    const cards=document.querySelectorAll('.card');
+    cards.forEach(card=>{
+      card.addEventListener('mouseenter',()=>{
+        card.style.boxShadow='0 0 30px #ffd43b';
+      });
+      card.addEventListener('mouseleave',()=>{
+        card.style.boxShadow='0 8px 20px rgba(0,0,0,.3)';
+      });
+    });
+  </script>
+
+</body>
+</html>

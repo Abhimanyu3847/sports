@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basketball</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;}
+    html{scroll-behavior:smooth;}
+    body{
+      background:#fff5e6 url("i.png") center/cover fixed no-repeat;
+      color:#cc5200;
+    }
+    header{
+      background:rgba(255,255,255,.85);
+      padding:20px 40px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      display:flex;
+      gap:25px;
+      flex-wrap:wrap;
+      justify-content:center;
+      box-shadow:0 4px 12px rgba(0,0,0,.08);
+    }
+    header a{
+      color:#ff6600;
+      text-decoration:none;
+      font-size:1.2rem;
+      transition:transform .3s;
+    }
+    header a:hover{transform:scale(1.15);}
+    section{
+      min-height:100vh;
+      padding:100px 20px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+    }
+    h2{font-size:3rem;margin-bottom:25px;color:#993d00;}
+    p{max-width:800px;font-size:1.25rem;line-height:1.7;margin-bottom:25px;}
+    .sect-img{width:90%;max-width:600px;border-radius:15px;margin-bottom:25px;box-shadow:0 0 20px rgba(255,102,0,.2);}
+    .comp-cards{
+      display:flex;
+      gap:35px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:40px;
+    }
+    .comp-card{
+      width:300px;
+      background:#ffffff;
+      color:#cc5200;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 8px 22px rgba(255,102,0,.15);
+      transition:transform .4s;
+    }
+    .comp-card img{width:100%;height:180px;object-fit:contain;background:#fff;padding:10px;}
+    .comp-card div{padding:20px;}
+    .comp-card:hover{transform:scale(1.08) rotate(-1deg);}
+    .player-cards{
+      display:flex;
+      gap:35px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:40px;
+    }
+    .player-card{
+      width:320px;
+      background:#ffffff;
+      color:#cc5200;
+      border-radius:20px;
+      padding:25px;
+      box-shadow:0 8px 22px rgba(255,102,0,.15);
+      transition:transform .4s;
+    }
+    .player-card:hover{transform:translateY(-15px);}
+    .player-card img{width:100%;border-radius:15px;margin-top:15px;}
+    .floating{
+      position:fixed;
+      font-size:2.5rem;
+      opacity:.35;
+      pointer-events:none;
+      animation:drift 30s linear infinite;
+    }
+    @keyframes drift{
+      from{transform:translateY(110vh) rotate(0deg);}
+      to{transform:translateY(-110vh) rotate(360deg);}
+    }
+    .reveal{opacity:0;transform:translateY(60px);transition:all .8s ease;}
+    .reveal.active{opacity:1;transform:translateY(0);}
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#intro">Intro</a>
+    <a href="#comps">Competitions</a>
+    <a href="#players">Legends</a>
+    <a href="index.html">Home</a>
+  </header>
+
+  <section id="intro">
+    <h2 class="reveal">Game of Hoops</h2>
+    <p class="reveal">
+      Basketball is a fast-paced sport played on a rectangular court where two teams aim to score by shooting a ball through the opponent's hoop.  
+      From street courts to packed arenas, the sound of bouncing balls and swishing nets creates energy that captivates millions.  
+      Experience the speed, skill, and excitement that make basketball a global phenomenon.
+    </p>
+  </section>
+
+  <section id="comps">
+        <h2 class="reveal">Top Competitions</h2>
+    <div class="comp-cards">
+      <div class="comp-card reveal">
+        <img src="nba.gif" alt="NBA">
+        <div>
+          <h3>NBA</h3>
+          <p>The world's premier basketball league featuring the best athletes and most iconic teams, delivering high-flying action every season.</p>
+        </div>
+      </div>
+      <div class="comp-card reveal">
+        <img src="Olympic.png" alt="Olympics">
+        <div>
+          <h3>Olympic Basketball</h3>
+          <p>Global nations compete for gold every four years, showcasing elite talent and fierce national pride on the biggest stage.</p>
+        </div>
+      </div>
+      <div class="comp-card reveal">
+        <img src="euro.png" alt="EuroLeague">
+        <div>
+          <h3>EuroLeague</h3>
+          <p>Top European clubs battle in a prestigious tournament known for tactical brilliance and passionate fan support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="players">
+    
+    <h2 class="reveal">Legendary Players</h2>
+    <div class="player-cards">
+      <div class="player-card reveal">
+        <h3>Michael Jordan</h3>
+        <p>Relentless scorer and fierce competitor, six-time NBA champion who redefined greatness and globalized the game.</p>
+        <img src="jordan.gif" alt="Jordan">
+      </div>
+      <div class="player-card reveal">
+        <h3>LeBron James</h3>
+        <p>Physical powerhouse and brilliant playmaker, continuing to break records while inspiring a new generation of fans.</p>
+        <img src="james.gif" alt="LeBron">
+      </div>
+      <div class="player-card reveal">
+        <h3>Kobe Bryant</h3>
+        <p>Master of footwork and mental toughness, five-time champion whose Mamba mentality became a worldwide mantra.</p>
+        <img src="kobe.gif" alt="Kobe">
+      </div>
+    </div>
+  </section>
+
+  <span class="floating" style="left:5%;animation-delay:0s;">🏀</span>
+  <span class="floating" style="left:20%;animation-delay:4s;">🏆</span>
+  <span class="floating" style="left:35%;animation-delay:8s;">⭐</span>
+  <span class="floating" style="left:50%;animation-delay:12s;">🔥</span>
+  <span class="floating" style="left:65%;animation-delay:16s;">👑</span>
+  <span class="floating" style="left:80%;animation-delay:20s;">🚀</span>
+
+  <script>
+    function revealOnScroll(){
+      const reveals=document.querySelectorAll('.reveal');
+      reveals.forEach(el=>{
+        const windowHeight=window.innerHeight;
+        const elementTop=el.getBoundingClientRect().top;
+        if(elementTop<windowHeight-80) el.classList.add('active');
+      });
+    }
+    window.addEventListener('scroll',revealOnScroll);
+    revealOnScroll();
+  </script>
+
+</body>
+</html>
